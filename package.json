@@ -1,0 +1,43 @@
+{
+  "name": "churchfinder",
+  "version": "0.0.2",
+  "description": "Directory for Churches",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arunsamk/ChurchFinder.git"
+  },
+  "keywords": [
+    "church"
+  ],
+  "author": "kudwi",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/arunsamk/ChurchFinder/issues"
+  },
+  "homepage": "https://github.com/arunsamk/ChurchFinder#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-sanitize": "1.5.8",
+     "body-parser": "^1.4.3",
+    "bootstrap": "3.3.7",
+    "express": "^4.13.4",
+    "method-override": "^2.1.3",
+    "jquery": "3.1.1",
+    "mkdirp": "0.5.1",
+    "mongoose": "4.6.5",
+    "morgan": "1.7.0",
+    "multer": "1.2.0",
+    "ng-dialog": "^0.6.4",
+    "nodemon": "1.11.0",
+      "angularjs-dropdown-multiselect":  "^1.10.2",
+      "lodash" : "^3.10.0",
+    "path": "0.12.7"
+  }
+}

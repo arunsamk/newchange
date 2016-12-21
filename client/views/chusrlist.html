@@ -1,0 +1,22 @@
+<div class="container" ng-controller="chusrlistCtrl">
+	<hr>	
+	<h3>Church List</h3><button col-sm-3 type="submit" ng-click="usrLogout()">Logout</button>
+	<hr>
+	<table class="table table-hover table-bordered">
+		<caption align="center"> Your Church List </caption>
+		<thead>
+			<tr>
+				<th>Church Name</th><th>Church Denomination</th><th>Church Pastor</th><th>Church Language</th><th>Church Address</th><th>View Church</th>
+			</tr>
+		</thead>
+		<tbody>
+			 <tr ng-repeat="church in churches">
+				<td>{{ church.ChurchName }}</td><td>{{ church.ChurchDenomination }}</td><td>{{ church.ChurchPastor }}</td><td>{{ church.ChurchLanguage }}</td>
+				<td ng-repeat="addr in church.ChurchAddress">{{ addr }}</td>
+				<td> <button class="btn btn-info" ng-click="getChId($index)">Update Church Details</button></td>
+				<td> <button class="btn btn-info" ng-click="alert(hello)">View Church Details</button></td>
+				 <!--<a ng-href="#/chview" type="button" class="btn btn-info" ng-click="getchId($index)">Update Church Details</a> <button class="btn btn-info" ng-click="getchId($index)">Update Church Details</button> -->
+			</tr>
+		</tbody>
+	</table>
+</div>

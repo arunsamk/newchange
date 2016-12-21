@@ -1,0 +1,190 @@
+
+<style>
+.bootstrap-select > .dropdown-toggle.bs-placeholder,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:hover,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:active { color: #212112; }
+
+.testborder{
+border:1px solid gray;
+}
+.alphalink
+{
+border:1px solid white;
+padding:2px;color:white;margin:2px 2px;
+}
+
+</style>
+
+<div class="jumbotron jumbo-direct text-center ">
+<div class="col-sm-4 col-md-4 col-lg-2 col-xs-6 text-left ">
+<span class="brand-logo" onclick="openNav()">&#9776; Churchlocator.in</span>
+</div>
+ <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+  <div class="jumbo-text-direct ">Online Church Directory</div>
+ </div>
+   </div>
+
+<div class="container">
+  <p style="padding:10px;"></p>
+<div class="col-sm-9 col-md-9 col-xs-12 testborder"  ng-controller="FileCtrl"   style="overflow:hidden;">
+
+  <div class="col-sm-12 col-xs-12 col-md-12 text-center" style="padding:5px;margin-top:5px;background:#614d8e;">
+
+<a href="" class="alphalink" ng-click="order()">A</a>
+<a href="" class="alphalink" ng-click="border()" >B</a>
+<a href="" class="alphalink" ng-click="corder()" >C</a>
+<a href="" class="alphalink" ng-click="dorder()" >D</a>
+<a href="" class="alphalink" ng-click="eorder()" >E</a>
+<a href="" class="alphalink" ng-click="forder()" >F</a>
+<a href="" class="alphalink" ng-click="gorder()" >G</a>
+<a href="" class="alphalink" ng-click="horder()" >H</a>
+<a href="" class="alphalink" ng-click="iorder()" >I</a>
+<a href="" class="alphalink" ng-click="jorder()" >J</a>
+<a href="" class="alphalink" ng-click="korder()" >K</a>
+<a href="" class="alphalink" ng-click="lorder()" >L</a>
+<a href="" class="alphalink" ng-click="morder()" >M</a>
+<a href="" class="alphalink" ng-click="norder()" >N</a>
+<a href="" class="alphalink" ng-click="oorder()" >O</a>
+<a href="" class="alphalink" ng-click="porder()" >P</a>
+<a href="" class="alphalink" ng-click="qorder()" >Q</a>
+<a href="" class="alphalink" ng-click="rorder()" >R</a>
+<a href="" class="alphalink" ng-click="sorder()" >S</a>
+<a href="" class="alphalink" ng-click="torder()" >T</a>
+<a href="" class="alphalink" ng-click="uorder()" >U</a>
+<a href="" class="alphalink" ng-click="vorder()" >V</a>
+<a href="" class="alphalink" ng-click="worder()" >W</a>
+<a href="" class="alphalink" ng-click="xorder()" >X</a>
+<a href="" class="alphalink" ng-click="yorder()" >Y</a>
+<a href="" class="alphalink" ng-click="zorder()" >Z</a>
+
+        
+  </div>
+<div class="col-sm-12 col-xs-12 col-md-12 text-left "  >   
+ <div class="table-responsive"  style="overflow: visible;height: auto;margin-bottom: 0px;padding-bottom: 0px;">
+  <table class="table">
+    <thead>
+      <tr>
+
+        <th>Churchname</th>
+         <th>Denomination</th>
+          <th>Service</th>
+         <th>Address</th>
+
+         <th>Phone</th>
+      </tr>
+    </thead>
+  
+     <tbody>
+      <tr ng-repeat="da in data" >
+           <td> {{da.ChurchName}}</td>
+            <td>{{da.ChurchDenomination}}</td>
+<!--             <td>{{da.ChurchArea}}</td>-->
+<!--            <td>{{da.ChurchService}}</td>-->
+
+<!--           <td>{{da.ChurchPhonenumber}}</td>-->
+            <td><table class="bordered-table"><tr ng-repeat="d in da.ChurchService"><td>{{d}}</td></tr></table></td>
+            <td><table class="bordered-table"><tr ng-repeat="dat in da.ChurchAddress track by $index"><td>{{dat}}</td></tr></table></td>
+           <td>{{da.ChurchPhonenumber}}</td>
+        </tr>
+      </tbody>
+   </table>
+   </div>
+
+ </div>
+ </div>
+         <div class="col-sm-3 col-md-3 col-xs-12 text-center bg-mediumgray" ng-controller="SearchCtrl" >
+    <div class="col-sm-12 col-md-12 col-xs-12">
+        <p class="main_header" style="color:#656565;">Quick Search</p>
+    </div>
+     
+  <div class="col-sm-12 col-xs-12 polaroid">
+    <form class="form-inline"> 
+   <select class="form-control with-search " select-picker multiple data-live-search="true" title="SELECT LOCALITY" data-style="bg-beige"  ng-model="formData.are" style="width:100%;  ">
+            <option value="" disabled selected hidden>SELECT LOCALITY</option>
+            <option>chennai</option>
+             <option>oriyur</option>
+            <option>nungambakkam</option>            <option>Chromepet</option>
+</select>
+</form> 
+  </div>
+
+    <div class="col-sm-12 col-md-12 col-xs-12 polaroid" id="denom_div" >      
+  <FORM>
+    <select class=" form-control with-search" select-picker multiple data-live-search="true" title="SELECT DENOMINATION" data-style="bg-lightseablue"  ng-model="formData.key" style="width:100%;">
+ <option>C.S.I</option>
+<option>T.E.L.C./LUTHERAN</option>
+<option>C.P.M </option>
+<option>PRESBYT.</option>
+<option> E.C.I</option>
+<option> ASSEMBLIES OF GOD</option>
+<option>SALVATION ARMY</option>
+<option>METHODIST</option>
+<option> MARTHOMA</option>
+<option>BAPTIST</option>
+<option>I.P.C</option>
+<option>CHARISMATIC/PENTECOSTAL/INDEPENDANT</option>
+<option> ADVENT CHRISTIAN</option>
+<option> CHURCH OF GOD</option>
+<option>BRETHEREN</option>
+</select>
+</FORM>
+ </div> 
+
+   <div class="col-sm-12 col-md-12 col-xs-12 polaroid" id="time_div"> 
+    <FORM>
+    <select class="form-control with-search" select-picker multiple data-live-search="true" title="SELECT TIMING" data-style="bg-cyanblue" ng-model="formData.ser" style="width:100%;">
+         <option>EARLY MORNING</option>
+        <option>MORNING</option>
+        <option>FORENOON</option>
+        <option>AFTERNOON</option>
+        <option>EVENING</option>
+      </select>
+      </FORM>
+       </div>
+      <div class="col-sm-12 col-md-12 col-xs-12 polaroid" id="lang_div">    
+        <FORM>
+         <select class="form-control with-search " select-picker bg-lightseablue multiple data-live-search="true" title="SELECT LANGUAGE" data-style="bg-gray" ng-model="formData.lan" style="width:100%; ">
+         <option>TAMIL</option>
+        <option>ENGLISH</option>
+        <option>MALAYALAM</option>
+        <option>HINDI</option>
+        <option>TELUGU</option>
+      </select>     
+      </FORM>
+          </div> 
+  
+     <div class="col-sm-12 col-xs-12 polaroid" id="spl_div"> 
+       <FORM>
+           <select class=" form-control with-search "  select-picker multiple data-live-search="true"  title="SELECT SPECIAL SERVICES" data-style="bg-lightviolet" ng-model="formData.spe"  style="width:100%; "  ng-change="toggleitem()">
+        <option>COMMUNION SERVICE</option>
+         <option>1st OF THE MONTH SERVICE</option>
+        <option>HEALING SERVICE</option>
+        <option>BIBLE STUDY</option>
+        <option>SPECIAL MEETING</option>
+         </select>     
+  </FORM>
+  </div>
+  <div class="col-sm-10 col-sm-offset-1 col-xs-12 well-sm  bg-gray" style="margin-top:2%;margin-bottom:2px;max-height:250px;"> 
+  <div class="col-sm-12 col-xs-12 text-left" style="padding:0px;font-weight: bold;">Selection Criteria:</div>
+  <div class="col-sm-12 col-xs-12 text-left " style="padding:0px;"><div class="col-sm-5 col-xs-5" style="padding:0px;font-size: 14px;font-color:#212121;">Location:</div><div class="col-sm-7 col-xs-7" style="padding:0px;font-size: 14px;">{{formData.are}}</div></div>
+  <div class="col-sm-12 col-xs-12 text-left " style="padding:0px;"><div class="col-sm-5 col-xs-5" style="padding:0px;font-size: 14px;font-color:#212121;">Denomiation:</div><div class="col-sm-7 col-xs-7" style="padding-right:0px;font-size: 14px;">{{formData.key}}</div></div>
+  <div class="col-sm-12 col-xs-12 text-left " style="padding:0px;"><div class="col-sm-5 col-xs-5" style="padding:0px;font-size: 14px;font-color:#212121;">Language:</div><div class="col-sm-7 col-xs-7" style="padding:0px;font-size: 14px;">{{formData.lan}}</div></div>
+  <div class="col-sm-12 col-xs-12 text-left " style="padding:0px;"><div class="col-sm-5 col-xs-5" style="padding:0px;font-size: 14px;font-color:#212121;">Timing:</div><div class="col-sm-7 col-xs-7" style="padding:0px;font-size: 14px;">{{formData.ser
+        }}</div></div>
+  <div class="col-sm-12 col-xs-12 text-left " style="padding:0px;"><div class="col-sm-5 col-xs-5" style="padding:0px;font-size: 14px;font-color:#212121;">Service:</div><div class="col-sm-7 col-xs-7" style="padding:0px;font-size: 14px;">{{formData.spe}}</div></div>
+  </div>
+
+<div class="col-sm-12 col-xs-12" style="margin-top: 2px;margin-bottom:2px;"> 
+    <FORM>
+        <button class="btn btn-lg btn-info btn-find-div hidden-xs" style="width:100%;margin-bottom:7px;margin-top: 3%;height: 100%;" ng-click="searchTodo()"> FIND CHURCHES<span class="glyphicon glyphicon-search" aria-hidden="true" style="margin-left: 10px;"></span></button>
+<!--
+       <a href="javascript:void(0);" class="btn btn-lg btn-info btn-find-div hidden-xs" > FIND CHURCHES<span class="glyphicon glyphicon-search glyph-search-btn" aria-hidden="true"></span></a>
+        <a href="javascript:void(0);" class="btn btn-lg btn-info btn-find-div hidden-sm hidden-lg hidden-md" > FIND <span class="glyphicon glyphicon-search glyph-search-btn" aria-hidden="true"></span></a>
+-->
+       </FORM>
+  </div> 
+  
+  </div>
+
+</div>

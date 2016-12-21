@@ -1,0 +1,15 @@
+<div class="container" ng-controller="chviewCtrl">
+	<div ng-repeat="ch in churches">
+		Church Id : {{ ch.ChurchId }}<br>
+		Church Name :  {{ ch.ChurchName }}<br>
+		Church Denomination : {{ ch.ChurchDenomination }}<br>
+		Church Pastor : {{ ch.ChurchPastor }}<br>
+		Church Address : {{ ch.ChurchAddress }}<br>
+		Church Language : {{ ch.ChurchLanguage }}<br>
+		Church Service : {{ ch.ChurchService }}<br>
+		Church Special Service : {{ ch.ChurchSplService }}<br>
+		Church Content : {{ ch.ChurchContent }}<br>
+		Church Pictures : <iframe id="imgtab" class="small" ng-src= "{{imageUrl}}" frameborder="0" width="200" height="200"></iframe><br>
+		Church Video :  <iframe class="youtube-player" type="text/html" width="200" height="200" ng-src="{{trustSrc(movie.src)}}" allowfullscreen frameborder="0"></iframe>
+	</div>
+</div>

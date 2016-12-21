@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html lang="en">
+<head>
+              <!-- META -->
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+       <title>Church Locator Application</title>
+              <!-- SCROLLS -->
+       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> <!--load bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">     
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.2.3/css/ngDialog.css" />
+    <link rel="stylesheet" href="/node_modules/ng-dialog/css/ngDialog-theme-default.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/carousel.css">
+    <link rel="stylesheet" href="styles/colorcode.css">
+    <link rel="stylesheet" href="styles/ipad_pro_screen.css">
+    <link rel="stylesheet" href="styles/ipad_screen.css">
+    <link rel="stylesheet" href="styles/xs.css">
+  
+    <link rel="stylesheet" href="styles/sidenav.css">
+
+</head>
+<!-- SET THE CONTROLLER AND GET ALL TODOS -->
+<body ng-app="cfApp">
+      <!--- nav bar --->
+     
+    <nav class="navbar navbar-default sidenav " ng-controller="MyCtrl" id="mySidenav">
+    <div class="navbar-header col-sm-1 col-xs-12 col-md-2 col-lg-1">
+     <a class="navbar-brand "  href="#/" style="margin-left:5px ;">Logo</a> 
+     <a href="javascript:void(0)" class="closebtn " onclick="closeNav()">&times;</a>
+    </div>
+    <br>
+     <div class="col-sm-12 col-xs-12" id="myNavbar" style="margin-left:5px ;"> 
+      <ul class="nav nav-pills nav-stacked">
+        <li class="col-xs-7 col-sm-6 "><a href="" data-toggle="tooltip" data-placement="right" title="Find Churches" data-ng-click="clickToOpen()"><i class="fa fa-search logo" aria-hidden="true"></i></a></li><script type="text/ng-template" id="templateID" class="ngdialog">
+        <div class="ngdialog-message">
+            <br>
+              <div class="row">
+                     <div  style="text-align:left">
+                             <label class="col-lg-4 col-xs-4 col-md-4 col-sm-4"  for="denomination">Enter the denomination</label>
+                    </div>
+                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <input class=" col-sm-12 col-md-12 col-xs-12 col-lg-12 " type="text"  name="keyword" ng-model="formData.key" required />
+                     </div>
+        </div>
+            <br>
+        <div class="row">
+                  <div  style="text-align:left"> 
+                         <label  class="col-lg-4 col-xs-4 col-md-4 col-sm-4" for="language">Enter the Language</label>
+                 </div>
+                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> 
+                      <input type="text" class=" col-sm-12 col-md-12 col-xs-12 col-lg-12" name="keyword" ng-model="formData.lan" required />
+                </div>
+        </div>
+            <br>
+        <div class="row">
+              <div  style="text-align:left">
+                  <label class="col-lg-4 col-xs-4 col-md-4 col-sm-4"for="services">Enter the services</label>
+               </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <input type="text" class="col-sm-12 col-md-12 col-xs-12 col-lg-12"  name="keyword" ng-model="formData.ser" required />
+              </div>
+        </div>
+            <br>
+       <div class="row">
+          <div  style="text-align:left">
+              <label class="col-lg-4 col-xs-4 col-md-4 col-sm-4" for="special services">Enter the special services</label>
+          </div>
+           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+               <input type="text" class=" col-sm-12 col-md-12 col-xs-12 col-lg-12" name="keyword" ng-model="formData.spe" required />
+          </div>
+        </div>
+            <br>
+     <div class="row">
+            <div  style="text-align:left">
+                <label class="col-lg-4 col-xs-4 col-md-4 col-sm-4" for="area">Enter the location</label>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                 <input type="text" class=" col-sm-12 col-md-12 col-xs-12 col-lg-12 " name="keyword" ng-model="formData.are" required />
+            </div>
+    </div>
+            <div class="row">
+                <div class=" col-sm-12 col-md-12 col-xs-12 col-lg-12">
+        <a ng-href="#/search"><button type="button" class="btn home-btn-find text-center"  ng-click="searchTodo()"> Search</button></a>
+        </div></div> </div>
+
+    </script>
+ 
+        <li class="col-xs-7 col-sm-6"><a ng-href="#/directory" data-toggle="tooltip" data-placement="right" title="Explore Churches"><i class="fa fa-binoculars logo" aria-hidden="true" ></i></a></li>
+        <li class="dropdown col-xs-7 col-sm-9" ><a href="" class="dropdown-toggle logo" data-toggle="dropdown" data-placement="right" title="Add" role="button" aria-haspopup="true" aria-expanded="false" id="navadd" ><i class="fa fa-plus-square logo " aria-hidden="true" ></i><span class="caret logo"></span></a>
+          <ul class="dropdown-menu">
+                            <li><a  ng-href="#/add"><i class="fa fa-university fa-1x" aria-hidden="true"></i>Church</a></li>
+                            <li><a ng-href="#/event"><i class="fa fa-flag fa-1x" aria-hidden="true" ></i>Event</a></li>
+            </ul>
+         </li>
+        <li class="col-xs-12 col-sm-12 "><a ng-href="#/free" class="btn btn-xs " id="btn_free_list">Free Listing</a></li>
+        <li class="col-xs-7 col-sm-6 "><a href="#/usrlog" data-toggle="tooltip" data-placement="right" title="Advertise"><i class="fa fa-bullhorn logo" aria-hidden="true"></i></a></li>
+        <li class="col-xs-7 col-sm-6 "><a ng-href="#/usrlog" data-toggle="tooltip" data-placement="right" title="Login"><span class="glyphicon glyphicon-log-in logo"></span></a></li>
+        </ul>
+    </div>
+</nav>
+    
+<!--
+     <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                  <div class="navbar-header">
+                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         </button>
+                         <a class="navbar-brand" href="#">Logo</a>
+                  </div> </div>
+                  <div class="collapse navbar-collapse" id="myNavbar">
+                         <ul class="nav navbar-nav">
+                             <li class="active"><a href="#">Home</a></li>
+                             <li><a href="#">About</a></li>
+                             <li><a href="#">Projects</a></li>
+                             <li><a href="#">Contact</a></li>
+                         </ul>
+                         <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                         </ul>
+                  </div>
+            
+     </nav>
+-->
+
+<div ng-view="">
+    </div>     
+      <footer class="container-fluid text-center bg-mediumgray" style="margin-top:2%;">
+            <div class="row">             
+                <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-2 text-left">
+                    <h4 class="text-danger">Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" >Home</a></li>
+                        <li><a href="" ng-click="clickToOpen()">Find Churches</a></li>
+                        <li><a href="#/directory">Explore Churches</a></li>
+                         <li><a href="#/usrlog">Add</a></li>
+                         <li><a href="#/free">Free Listing</a></li>
+                        <li><a href="">Contact</a></li>
+                         <li><a href="#/usrlog">Login</a></li>
+                    </ul>
+                </div>
+                   <div class="col-xs-6 col-sm-6">
+                    <h4 class="text-danger">Powered By</h4>
+                    <p>  
+                   <a href="https://www.kudwi.com" title="KUDWI" target="_blank" ><img src="images/KUDWILOGO.png" width="180px" height="80px" style="margin:5px;background-color: #fff;"></a>
+                   </p>
+                   <div class="col-xs-12 col-sm-12 text-center">
+        <p style="padding:10px;"></p>
+        <p align=center>© Copyright 2016 Cross Questions</p>
+      </div>
+                </div>
+
+    </div>
+          
+</footer>
+     
+<!-- SPELLS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!--	<script src="/node_modules/jquery/dist/jquery.min.js"></script>-->
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/i18n/defaults-en_US.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/i18n/defaults-*.min.js"></script>-->
+<!--    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
+        <script src="/node_modules/angular/angular.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>-->
+         <script type ="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.8/angular-resource.js"></script>   
+         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-dropdown-multiselect/1.5.2/angularjs-dropdown-multiselect.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.5.1/lodash.js"></script>
+<!--    <script src="angularjs-dropdown-multiselect.min.js"></script>-->
+		<script src="/node_modules/ng-dialog/js/ngDialog.min.js"></script>
+    
+    
+        <script type="text/javascript" src="scripts/app.js"></script>
+        <script type="text/javascript" src="scripts/controllers/addctrl.js"></script>
+        <script type="text/javascript" src="scripts/controllers/searchctrl.js"></script>
+        <script type="text/javascript" src="scripts/controllers/filectrl.js"></script>
+        <script type="text/javascript" src="scripts/controllers/videoCtrl.js"></script>
+        <script type="text/javascript" src="scripts/controllers/eventdisplayCtrl.js"></script>
+    <!--<script src="scripts/eventfactoryctrl.js"></script>-->
+<!--         <script src="scripts/pickctrl.js"></script>-->
+    <script type="text/javascript" src="scripts/controllers/sidenav.js"></script>
+    <script type="text/javascript" src="scripts/controllers/videoCtrl.js"></script>
+        <script type="text/javascript" src="scripts/controllers/displayctrl.js"></script>
+        <script type="text/javascript" src="scripts/controllers/newCtrl.js"></script>
+        <script type="text/javascript" src="scripts/controllers/myctrl.js"></script>
+        <script type="text/javascript" src="scripts/controllers/eventctrl.js"></script>		
+        <script type="text/javascript" src="scripts/directives/filemodel.js"></script>
+        <script type="text/javascript" src="scripts/services/multipartForm.js"></script>
+		<script type="text/javascript" src="scripts/controllers/addchurchdetails.js"></script>
+		<script type="text/javascript" src="scripts/controllers/chlist.js"></script>
+		<script type="text/javascript" src="scripts/controllers/chview.js"></script>
+		<script type="text/javascript" src="scripts/directives/dirchkfsize.js"></script>
+		<script type="text/javascript" src="scripts/services/fuservice.js"></script>
+		<script type="text/javascript" src="scripts/services/recService.js"></script>
+		<script type="text/javascript" src="scripts/controllers/chview.js"></script>	
+		<script type="text/javascript" src="scripts/controllers/addusrctrl.js"></script>
+		<script type="text/javascript" src="scripts/controllers/verifyLogCtrl.js"></script>
+		<script type="text/javascript" src="scripts/controllers/chusrlistCtrl.js"></script>
+		<script type="text/javascript" src="scripts/controllers/chlistfree.js"></script>
+		<script type="text/javascript" src="scripts/controllers/updchdetCtrl.js"></script>
+		<script type="text/javascript" src="scripts/controllers/addadvertCtrl.js"></script>	
+		<script type="text/javascript" src="scripts/services/advimgService.js"></script>
+		<script type="text/javascript" src="scripts/controllers/MainCtrl.js"></script>
+        <script type="text/javascript" src="scripts/controllers/admsetCtrl.js"></script>
+	    <!--<script type="text/javascript" src="scripts/directives/AdvDirfupload.js>"</script>-->
+		  
+    <script> 
+var interval = 0; 
+//var areaid;
+var i=0;
+var itemdiv,fulldiv,coldiv, paneldiv, panhead_div,link_play;
+var panbody_div,js_div,thumb_div,theimg,panfoot,link_knowmore;
+
+var inlen=0;
+var mm;
+var vidivlist=[];
+
+//  function startTicker()
+//  {
+//      $("#news li:first").slideUp(function(){
+//
+//          $(this).appendTo($("#news")).slideDown();
+//          console.log('Interval When starting--> ', interval);
+//      });
+//  }
+//  function stopTicker()
+//  {
+//      clearInterval(interval);
+//      console.log('Interval when Stopped --> ', interval);
+//  }
+//  $(document).ready(function(){
+//  interval=setInterval(startTicker, 2000);
+//  $("#news").hover(function(){
+//          clearInterval(interval);
+//          console.log('Interval when Stopped --> ', interval);
+//          stopTicker();
+//        },function(){
+//            interval=setInterval(startTicker, 2000);
+//            console.log('Interval when ready --> ', interval);
+//        });
+  
+  /*  for (areaid=0; areaid<arealist.length;areaid++){
+       $("#area_list").append("<option>"+arealist[areaid]+"</option>");
+       $("li").attr("id",arealist[areaid]);
+     }*/
+
+ 
+   
+});
+    </script>
+   </body>
+</html>

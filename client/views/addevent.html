@@ -1,0 +1,75 @@
+<!-- <div class="jumbotron" style="text-align: center;">
+  <p style="font: 45px Lato,thin, sans-serif;font-weight:300;margin-top:10%;">Add your Events</p>  
+</div>
+<div class="container" ng-controller="EventCtrl">
+    <form>
+       <div class="form-group">
+          
+           <label for="churchid">Church Id</label>
+              <input type="number" name="Churchid" ng-model="formData.churchid" /><br />           
+           <label for="Eventid">Event Id</label>
+               <input type="number" name="eventid" ng-model="formData.eventid"   /><br />
+            <label for="eventcontent">Event Content</label>
+                <input type="text" name="eventcontent" ng-model="formData.eventcontent" /><br />
+                <label  for="eventtitle">Event Title</label>
+                <input type="text" name="eventtitle" ng-model="formData.eventtitle" /><br />
+           <label for="exampleInputFile">picture</label>
+                <input type="file" id="exampleInputFile" file-model="customer.file"> <br />           
+        <button type="submit" class="btn btn-primary btn-lg" ng-click="createEvent()">Submit</button>
+		<button class="btn btn-primary btn-lg" ng-click="cancelEvent()">Cancel</button>
+        
+     
+    </form>
+        <br>
+        
+
+        
+            <label for="EventId">Event Id</label>
+               <input type="number" name="eventId" ng-model="formData.event"   /><br />
+     
+            <button type="button" class="btn btn-primary btn-lg" ng-click="displayEvent()">Display</button>
+            
+-->
+                                
+<!--
+           <div ng-repeat="event in events">
+            
+                {{event.eventtitle}}
+            <iframe ng-src= "{{imageUrl}}" width="200" height="200" frameborder="0" allowfullscreen ></iframe> 
+            </div>
+-->
+            
+       <!--  <button type="button" class="btn btn-primary btn-lg"><a ng-href="#/church">church</a></button>
+             
+        
+       
+</div>
+     -->
+     <div class="jumbotron jumbo-main text-center">
+        </div>
+
+<div class="container" ng-controller="EventCtrl">
+<div class="panel panel-default">
+        <div class="col-lg-12" style="text-align:center"><h2>Add New Event</h2></div>
+           <br>
+        <div class="panel-body">
+  <form class="form-horizontal">
+  <!-- <hr><h3 style="text-align: center;">Add New Event</h3><hr> -->
+  <div class="form-group"><label class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Event Id</label>
+  <input class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text" type="text" ng-model="formData.eventid" /></div>
+  <div class="form-group"><label class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Event Title</label>
+  <input class="col-lg-7 col-md-7 col-sm-7 col-xs-7  text"" type="text" ng-model="formData.eventtitle" /></div>
+  <div class="form-group"><label class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Event Content</label>
+  <input class="col-lg-7 col-md-7 col-sm-7 col-xs-7  text"" type="text" ng-model="formData.eventcontent" /></div>
+  <div class="form-group"><label class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Church Id</label>
+  <input class="col-lg-7 col-md-7 col-sm-7 col-xs-7  text"" type="text" ng-model="formData.churchid" /></div>
+  <div class="form-group"><label class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Event Picture</label>
+  <input class="col-lg-7 col-md-7 col-sm-7 col-xs-7  text"" type="file" id="exampleInputFile" file-model="customer.file"></div>
+  <hr>
+  <div class="form-group">
+    <button class="btn btn-primary btn-lg col-sm-4" type="submit" ng-click="createEvent()">Submit</button>
+    <button class="btn btn-danger btn-lg col-sm-offset-1 col-sm-4" ng-click="cancelEvent()">Cancel</button>
+  </div>
+  <hr>
+  </form>
+  </div></div></div>

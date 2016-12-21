@@ -1,0 +1,26 @@
+ <div class="jumbotron jumbo-main text-center">
+ </div>
+
+<div class="container" ng-controller="verifyLogCtrl">
+<div class="panel panel-default">	
+	<div class="col-lg-12" style="text-align:center"><h3> User Login</h3></div><br>
+	<div class="panel-body">
+	<form class="form-horizontal">	
+	<div class="form-group">
+		<label class="col-lg-3 col-md-3 col-sm-3 col-xs-3">User Id Proof</label>		
+		<input class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text" type="text" placeholder="Document/Id Proof Number" ng-model="frmD.UserId" required>		
+	</div>
+	<div class="form-group">
+		<label class="col-lg-3 col-md-3 col-sm-3 col-xs-3">User Password</label>		
+		<input class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text" type="password" placeholder="Enter your password" ng-model="frmD.UserPwd" required>		
+	</div>	
+	<hr>
+	<div class="form-group">
+		<button type="button" class="btn btn-primary btn-lg col-sm-4" ng-click="chkUsrRec()">Submit</button>
+		<button type="button" class="btn btn-danger btn-lg col-sm-offset-1 col-sm-4" ng-click="clrUsrRec()">Cancel</button>
+	</div>
+	<hr>
+	</form>
+	</div>
+	</div>
+</div>

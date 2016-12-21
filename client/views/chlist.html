@@ -1,0 +1,36 @@
+
+<div class="container-full">
+<div class="jumbotron jumbo-branch text-center">
+        </div>
+</div>
+
+<div ng-controller="newCtrl">
+   <div class="container">
+       
+	<table class="table table-hover table-bordered table-responsive">
+
+            <caption style="text-align:center;"><h1>List of Churches </h1></caption>
+		 <div class="col-sm-12 col-xs-12 col-md-12">
+        <thead>
+                       
+			<tr>
+				<th>Church Name</th><th>Church Denomination</th><th>Church Pastor</th><th>Church Language</th><th>Church Area</th><th>Church Phone</th><th>Church Address</th><th>View Church</th>
+			</tr>
+         
+		</thead> </div>         
+		<tbody>
+            
+			<tr ng-repeat="c in church">
+				<td>{{ c.ChurchName }}</td><td>{{ c.ChurchDenomination }}</td><td>{{ c.ChurchPastor }}</td><td>{{ c.ChurchLanguage }}</td>				
+                <td>{{ c.ChurchArea }}</td><td>{{ c.ChurchPhone }}</td><td><table><tbody><tr ng-repeat="a in c.ChurchAddress"><td> {{  a }} </td></tr>
+                		
+                	</tbody>
+                </table></td>
+				<td><a ng-href="#/chview" type="button" class="btn btn-info" ng-click="getchId($index)">View Church</a></td>
+				<!-- <button class="btn btn-info" ng-click="getchId($index)">View Church</button> -->				
+			</tr>
+
+		</tbody>
+	</table>		
+</div></div>
+     

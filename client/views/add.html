@@ -1,0 +1,33 @@
+<div class="jumbotron">
+  <p style="font: 45px Lato,thin, sans-serif;font-weight:300;margin-top:10%;">Add your Church</p>  
+</div>
+<div class="container" ng-controller="AddCtrl">
+           <form>
+        <div class="form-group">
+             <label for="churchid">Church Id</label>
+             <input type="text" name="churchid" ng-model="formData.churchid" /><br />
+          <label for="churchname">Church Name</label>
+             <input type="churchname" name="churchname" ng-model="formData.churchname" /><br />
+          <label for="area">Church area</label>
+               <input type="text" name="area" ng-model="formData.area" /><br />
+         <label for="phonenumber">Phone number</label>
+              <input type="number" name="phonenumber" ng-model="formData.phonenumber" /><br />
+         <label for="denomination">Denomination</label>
+               <input type="text" name="denomination" ng-model="formData.denomination" /><br />
+        <label for="pastors">Pastors</label>
+               <input type="text" name="pastors" ng-model="formData.pastors" /><br />
+        <label for="language">Language</label>
+               <input type="text" name="language" ng-model="formData.language" /><br />
+            
+        <label for="services">services</label>
+               <input type="text" name="services" ng-model="formData.services" /><br />
+            <label for="specialservices">special services</label>
+               <input type="text" name="special services" ng-model="formData.special" /><br />
+        <label for="content">Content</label>
+               <input type="text" name="content" ng-model="formData.content" /><br />
+         <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button> 
+         </form> 
+               </div> </div>
+     
+     
+   
