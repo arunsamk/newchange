@@ -49,6 +49,7 @@ var Event = mongoose.model('events', Eventdet);
 application.use(express.static(__dirname + '/client'));
 application.use('/node_modules', express.static(__dirname + '/node_modules'));
 application.use('/images', express.static(__dirname + '/client/images'));
+application.use('/views', express.static(__dirname + '/client/views'));
 application.use(morgan('dev'));
 application.use(bodyParser.urlencoded({ 'extended': true }));
 application.use(bodyParser.json());
