@@ -1,6 +1,6 @@
  var app = angular.module('cfApp');
 app.controller('EventDisplayCtrl',  ['$scope','$http', '$window',  '$rootScope', function($scope, $http, $window,   $rootScope){
-    $http.get('/api/events').success(function(success){
+    $http.get('/api/events').then(function(success){
        			
             $scope.events = success;
 //			$scope.events.imageUrl = [];
