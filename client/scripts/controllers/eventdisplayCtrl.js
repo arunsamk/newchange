@@ -1,8 +1,8 @@
  var app = angular.module('cfApp');
 app.controller('EventDisplayCtrl',  ['$scope','$http', '$window',  '$rootScope', function($scope, $http, $window,   $rootScope){
-    $http.get('/api/events').success(function(data){
+    $http.get('/api/events').success(function(success){
        			
-            $scope.events = data;
+            $scope.events = success;
 //			$scope.events.imageUrl = [];
 //        console.log($scope.events);        
 //			 for( var i=0; i<data.length; i++)
@@ -15,7 +15,7 @@ app.controller('EventDisplayCtrl',  ['$scope','$http', '$window',  '$rootScope',
 //			 }
 //            console.log('Image Url Array', $scope.events.imageUrl);
 //        
-         }).error(function(data){
+         }),(function(error){
               console.log('Error: ' + data);
              
          });
