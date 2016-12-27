@@ -92,7 +92,7 @@ background:rgba(250,250,250,0.7);
     .jumbo-main {
       /* #E91E63 #B39DDB background-image:linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%), url(C:/Users/KUDWI2/Desktop/BOOTSTRAP/CHURCHFINDER/images/emptychurch.jpg);*/
        /*background-image:linear-gradient(141deg, #91e2dd 0%, #1fc8db 51%, #8ad5f2 75%), url(D:/churchlocator/images/crossnew1.jpg);*/
-       background-image:linear-gradient(141deg, #B39DDB 0%,#7E57C2 15%,#7E57C2 35%,#7E57C2 51%, #E1BEE7 75%,#B39DDB 90%,#4A148C 100% ), url(D:/churchlocator/images/crossnew1.jpg);
+       background-image:linear-gradient(141deg, #B39DDB 0%,#7E57C2 15%,#7E57C2 35%,#7E57C2 51%, #E1BEE7 75%,#B39DDB 90%,#4A148C 100% ), url(../images/crossnew1.jpg);
       background-blend-mode:multiply;
    background-blend-mode: multiply;
       background-repeat:no-repeat;background-size:100% 100%;display: block;padding-top: 15px;
@@ -101,7 +101,7 @@ background:rgba(250,250,250,0.7);
   }
 
   .jumbo-direct{
-    background-image:linear-gradient(to bottom, #212121  0%, #7E57C2 35%, #7E57C2 75%,#B39DDB 90%), url(D:/churchlocator/images/street1.jpg);      
+    background-image:linear-gradient(to bottom, #212121  0%, #7E57C2 35%, #7E57C2 75%,#B39DDB 90%), url(../images/street1.jpg);      
    background-blend-mode: multiply;
       background-repeat:no-repeat;background-size:100% 100%;display: block;padding-top: 15px;
       color: #fff;
