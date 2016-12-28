@@ -34,8 +34,12 @@
         /* Set gray background color and 100% height */
   
           .row-search{
-          	max-height: 600px;height:600px;width:100%;margin-left:0px;
+          height:700px;width:100%;margin-left:0px;
           }
+          .row-header{
+            padding-top: 15px;padding-bottom: 10px;
+            font-size: 34px;  text-align: center;
+            }
           #btn_free_list{
           	border-radius: 50px;font-size: 16px;
 	color:white;height:30px;width:120px;padding-top:2px;margin:10PX 5PX 5PX 0PX;background-color:transparent;border:1px dashed white;"
@@ -46,7 +50,7 @@
 
     .advertise{
       padding-top: 0px;margin-left: 3%;
-      height: 100%; margin-top:0px;padding:0px;
+      height: 100%; margin-top:0;padding:0px;
     }
   
     .divad{
@@ -164,6 +168,9 @@ margin-top:5px auto;border: 2px solid white;
 .ticker:hover{
   background-color:transparent;
 }
+.ticker_pic{
+height:522px;width:100%;
+}
 .ul-ticker{
   margin:0px;
   padding:0px;
@@ -180,17 +187,23 @@ div.card {
   }
   div.polaroid {
   box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.19);
-margin:3.5% 1px 5px 10%;padding:0px 0px 0px 0px;width:79.7%;border-radius: 2;
+margin:3.5% 2% 2% 10%;padding:0px 0px 0px 0px;border-radius: 2;
 }
 div.polaroid_add_div{
   box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.19);
-margin:2% 3px 5px 2%;padding:0px 0px 0px 0px;width:99%;border-radius: 2;background:#fff;height:180px;
+margin:2% 3px 5px 2%;padding:0px 0px 0px 0px;width:100%;border-radius: 2;background:#fff;height:180px;
 }
 .main_pic{
   width:100%;height:180px;
 }
 .main_header{
   font-size: 22px;margin-top:15px;font-weight: bold;/*color:#0097db;*/color:#725e9e;
+}
+.main_para{
+font-size: 17px;margin-right:10px;
+}
+#upcoming_div{
+  border:1px solid #cccccc;
 }
 .search-header{
   /*background-image:linear-gradient(to right,rgba(0, 0, 0,0.8) 0%, rgba(0, 0, 250,0.5) 50%, rgba(0, 0, 0,0.8) 100%);
@@ -208,6 +221,8 @@ margin:2% 3px 5px 2%;padding:0px 0px 0px 0px;width:99%;border-radius: 2;backgrou
   color:#f3f3f3;
       font-size: 30px; margin-left:0px;padding-right: 5px;font-weight: thin;
       margin-top:5px;
+    }
+.vid-container iframe,
  }
  .nav-pills :hover{
   
@@ -226,7 +241,6 @@ margin:2% 3px 5px 2%;padding:0px 0px 0px 0px;width:99%;border-radius: 2;backgrou
 .vid-container{
     margin-top: 35px;
 }
-.vid-container iframe,
 .vid-container object,
 .vid-container embed {
   left: 0;

@@ -13,7 +13,10 @@
  
       
 </div>
-    <button type="button" class="btn home-btn-find col-sm-6 col-md-6 col-lg-6 col-xs-12 col-sm-push-3 col-md-push-3 col-lg-push-3" ng-click="clickToOpen()">Find a Church</button>
+     <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12 col-sm-push-3 col-md-push-3 col-lg-push-3">
+          <a href="" class="btn home-btn-find " id="findchurch"  ng-click="clickToOpen()">Find a Church</a>
+    </div>
+<!--    <button type="button" class="btn home-btn-find col-sm-6 col-md-6 col-lg-6 col-xs-12 col-sm-push-3 col-md-push-3 col-lg-push-3" ng-click="clickToOpen()">Find a Church</button>-->
     <script type="text/ng-template" id="templateID" class="ngdialog">
         <div class="ngdialog-message">
             <br>
@@ -72,37 +75,37 @@
 <div class="container-fluid text-left" id="div_search_container" >
 
   <div class="row content row-search bg-gray" >
- <div class="col-sm-5 col-md-5 col-xs-12" style="margin-left:2%;margin-right:2%;overflow:hidden;border:color:red;">
+ <div class="col-sm-6 col-md-6 col-lg-4 col-xs-12" style="overflow:hidden;padding:0px 0px 0px 0px;;">
    <div class="col-sm-12 col-md-12 col-xs-12  polaroid_add_div">
-<div class="col-sm-6 col-md-6 col-xs-12" style="margin:0%;padding:0px;">
+<div class="col-sm-6 col-md-6 col-xs-6" style="margin:0%;padding:0px;">
 <img src="images/goldcross.jpg" class="img img-responsive main_pic">
 </div>
-<div class="col-sm-6 col-md-6 col-xs-12 " ><a ng-href="#/directory"> <p class="main_header"> Online Church Directory</p></a><p style="color:#454545;">Church Locator is an on-line platform connecting people with local Christian churches. <a ng-href="#/directory"> Search local churches..</a> </p></div>
+<div class="col-sm-6 col-md-6 col-xs-12 " ><a ng-href="#/directory"> <p class="main_header"> Online Church Directory</p></a><p class="main_para">Church Locator is an on-line platform connecting people with local Christian churches. <a ng-href="#/directory"> Search local churches..</a> </p></div>
 </div>
 
-<div class="col-sm-12 col-md-12 col-xs-12 polaroid_add_div" style="margin-top:2%;">
-<div class="col-sm-6 col-md-6 col-xs-12" style="margin:0%;padding:0px;">
+<div class="col-sm-6 col-md-12 col-xs-12 polaroid_add_div">
+<div class="col-sm-6 col-md-6 col-xs-6" style="margin:0%;padding:0px;">
 <img src="images/churchi
 nner.jpg" class="img img-responsive main_pic" >
 </div>
-<div class="col-sm-6 col-md-6 col-xs-12 "> <a href="#">
+<div class="col-sm-6 col-md-6 col-xs-6 "> <a href="#">
 <p class="main_header">Enlarge your Church</p></a><p style="color:#454545;">Create a profile of your church by updating your service timings, languages and other special services. Upload pictures and video.<a ng-click="onClick()"> Contact us to know more...</a>Or go ahead a create a <a href="#/free">Free Listing</a> for your church.  </p></div>
 </div>
-<div class="col-sm-12 col-md-12 col-xs-12 polaroid_add_div" style="margin-top:2%;">
-<div class="col-sm-6 col-md-6 col-xs-12" style="margin:0%;padding:0px;">
+<div class="col-sm-12 col-md-12 col-xs-12 polaroid_add_div">
+<div class="col-sm-6 col-md-6 col-xs-6" style="margin:0%;padding:0px;">
 <img src="images/mic.jpg" class="img img-responsive main_pic">
 </div>
-<div class="col-sm-6 col-md-6 col-xs-12 "> <a href="#">
+<div class="col-sm-6 col-md-6 col-xs-6 "> <a href="#">
 <p class="main_header">Promote your Events</p></a><p> Make your events stand out online and get people to notice through Church Locator.<a ng-click="onClick()"> Contact us to know more...</a></p></div>
 </div>
 </div>
-       <div class="col-sm-4 col-md-4 col-lg-4 col-xs-12 "  style="margin-top:0px;background:#212121;" ng-controller="EventDisplayCtrl" >
+       <div class="col-sm-6 col-md-6 col-lg-4 col-xs-12 bg-white  col-lg-offset-1 " id="upcoming_div" style="margin-top:0px;background:#212121;" ng-controller="EventDisplayCtrl" >
   <h2 style="color:#fff;text-align: center;" >Up Coming Events</h2>
 
 <div class="col-sm-12 col-xs-12 ticker">
 <ul id="news" class="ul-ticker">
 <li class="news-item " ng-repeat="event in events">
-  <div class=" col-sm-12 col-xs-12  divmar">
+  <div class=" col-sm-12 col-xs-12 divmar">
       <img ng-src= "{{event.EventImage}}" width="100%" height="520px" frameborder="0" allowfullscreen >
 
     </div>
@@ -112,17 +115,17 @@ nner.jpg" class="img img-responsive main_pic" >
 
 </div>
 </div>
-<div class="col-sm-2 col-md-2 col-xs-12 advertise" >
-       <div class="col-sm-12 col-md-12 col-xs-12">
+<div class="col-sm-12 col-md-12 col-lg-2 col-xs-12 advertise pull-right" >
+       <div class="col-sm-3 col-md-3 col-lg-12 col-xs-12">
        <img src="https://placehold.it/200x155?text=ADVERTISEMENT 1" class="img-responsive divad" alt="Image">
        </div>
-       <div class="col-sm-12 col-md-12 col-xs-12">
+       <div class="col-sm-3 col-md-3 col-lg-12 col-xs-12">
        <img src="https://placehold.it/200x155?text=ADVERTISEMENT 2" class="img-responsive divad" alt="Image">
        </div>
-           <div class="col-sm-12 col-md-12 col-xs-12">
+           <div class="col-sm-3 col-md-3 col-lg-12 col-xs-12">
         <img src="https://placehold.it/200x155?text=ADVERTISEMENT 3" class="img-responsive divad" alt="Image">
        </div>
-       <div class="col-sm-12 col-md-12 col-xs-12">
+       <div class="col-sm-3 col-md-3 col-lg-12 col-xs-12">
        <img src="https://placehold.it/200x155?text=ADVERTISEMENT 4" class="img-responsive divad" alt="Image">
        </div>
        </div>
