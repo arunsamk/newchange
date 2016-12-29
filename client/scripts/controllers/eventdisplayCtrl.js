@@ -1,4 +1,28 @@
- vayCtrl.js
+var app = angular.module('cfApp');
+app.controller('EventDisplayCtrl',  ['$scope','$http', '$window',  '$rootScope', function($scope, $http, $window,   $rootScope){
+    $http.get('/api/events').success(function(data){
+          
+            $scope.events = data;
+   $scope.events.imageUrl = [];
+        console.log($scope.events);        
+    for( var i=0; i<data.length; i++)
+   {
+   
+                $scope.events.imageUrl.push($scope.events[i].EventImage);
+    
+                     
+    console.log('Image Url', $scope.events.imageUrl);
+    }
+            console.log('Image Url Array', $scope.events.imageUrl);
+        
+         }).error(function(data){
+              console.log('Error: ' + data);
+             
+         });
+    var interval=0;
+    function startTicker()
+  {
+      $("#news li:first").slideUp(function(){
 
           $(this).appendTo($("#news")).slideDown();
           // console.log('Interval When starting--> ', interval);
