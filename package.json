@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arunsamk/ChurchFinder.git"
+    "url": "git+https://github.com/arunsamk/newchange.git"
   },
   "keywords": [
     "church"
@@ -17,9 +17,9 @@
   "author": "kudwi",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/arunsamk/ChurchFinder/issues"
+    "url": "https://github.com/arunsamk/newchange/issues"
   },
-  "homepage": "https://github.com/arunsamk/ChurchFinder#readme",
+  "homepage": "https://github.com/arunsamk/newchange#readme",
   "dependencies": {
     "angular": "^1.5.8",
     "angular-resource": "^1.5.8",
