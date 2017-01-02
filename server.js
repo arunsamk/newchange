@@ -9,7 +9,7 @@ var Schema = mongoose.Schema;
 var multer = require('multer');
 var util = require('util');
 //Allocating a value or looking for port dynamically.
-var port = process.env.PORT || 8080;
+var port = process.env.PORT;
 //var site = require('./config/route.js');
 var db = require('./config/conn.js');
 var mkdirp = require('mkdirp');
